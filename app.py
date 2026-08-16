@@ -1,5 +1,6 @@
 import os
 import sqlite3
+from datetime import timedelta
 from functools import wraps
 
 from flask import Flask, abort, flash, g, redirect, render_template, request, session, url_for
@@ -10,7 +11,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATABASE = os.environ.get("DATABASE_PATH", os.path.join(BASE_DIR, "nova.db"))
 
 app = Flask(__name__)
+# Keep the key stable across restarts by sourcing it from the environment in production.
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "nova-development-secret-key")
+app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(days=30)
 app.config["DATABASE"] = DATABASE
 
 
@@ -89,7 +92,7 @@ def current_user():
 def login_required(view):
     @wraps(view)
     def wrapped_view(*args, **kwargs):
-        if current_user() is None:
+        if "user_id" not in session:
             flash("Please log in to continue.")
             return redirect(url_for("login"))
         return view(*args, **kwargs)
@@ -201,6 +204,7 @@ def login():
             return render_template("login.html", logged_in_user=current_user()), 401
         session.clear()
         session["user_id"] = user["id"]
+        session.permanent = True
         flash("Welcome back.")
         return redirect(url_for("feed"))
     return render_template("login.html", logged_in_user=current_user())
