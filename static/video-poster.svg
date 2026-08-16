@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="NOVA video poster">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10152b"/>
+      <stop offset="1" stop-color="#5b3fb5"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.75" cy="0.25" r="0.75">
+      <stop offset="0" stop-color="#e7b7ff" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#e7b7ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#background)"/>
+  <rect width="1200" height="675" fill="url(#glow)"/>
+  <circle cx="960" cy="150" r="120" fill="none" stroke="#fff" stroke-opacity="0.3" stroke-width="2"/>
+  <circle cx="960" cy="150" r="190" fill="none" stroke="#fff" stroke-opacity="0.16" stroke-width="2"/>
+  <text x="80" y="560" fill="#fff" font-family="sans-serif" font-size="72" font-weight="700" letter-spacing="12">NOVA</text>
+</svg>

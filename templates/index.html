@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Feed — NOVA{% endblock %}
+{% block title %}Feed · NOVA{% endblock %}
 {% block content %}
     <section class="hero-section">
         <div>
@@ -19,12 +19,16 @@
                     <p class="muted">Your next thought could start something.</p>
                 </div>
             </div>
-            <form method="post" action="{{ url_for('create_post') }}">
+            <form method="post" action="{{ url_for('create_post') }}" enctype="multipart/form-data">
                 <label class="sr-only" for="content">What are you thinking?</label>
-                <textarea id="content" name="content" rows="3" maxlength="500" placeholder="What are you thinking?" required></textarea>
+                <textarea id="content" name="content" rows="3" maxlength="500" placeholder="What are you thinking?"> </textarea>
                 <div class="composer-footer">
                     <span class="character-hint">Keep it concise · 500 characters max</span>
-                    <button class="button button-primary" type="submit">Post <span aria-hidden="true">↗</span></button>
+                    <label class="video-upload">
+                        <span>Attach video</span>
+                        <input type='file' name='video' accept='video/mp4,video/webm,video/quicktime'>
+                    </label>
+                    <button class="button button-primary" type="submit">Post <span aria-hidden="true">→</span></button>
                 </div>
             </form>
         </section>
@@ -61,13 +65,18 @@
                         </a>
                         <span class="post-index">{{ '%02d'|format(loop.index) }}</span>
                     </div>
-                    <p class="post-content">{{ post['content'] }}</p>
+                    {% if post['content'] %}<p class="post-content">{{ post['content'] }}</p>{% endif %}
+                    {% if post['video'] %}
+                        <video class="post-video" controls preload="metadata" poster="{{ url_for('static', filename='video-poster.svg') }}" src="{{ url_for('uploaded_file', filename=post['video']) }}">
+                            Your browser does not support embedded video. <a href="{{ url_for('uploaded_file', filename=post['video']) }}">Watch the video</a>.
+                        </video>
+                    {% endif %}
                     <div class="post-actions">
                         {% if logged_in_user %}
                             <form class="action-form" method="post" action="{{ url_for('like', post_id=post['id']) }}">
                                 <button class="action-button {% if post['id'] in liked_post_ids %}is-liked{% endif %}" type="submit" aria-label="{% if post['id'] in liked_post_ids %}Unlike{% else %}Like{% endif %} this post">
-                                    <span class="action-icon" aria-hidden="true">♡</span>
-                                    <span>{% if post['id'] in liked_post_ids %}Liked{% else %}Like{% endif %}</span>
+                                    <span class="action-icon" aria-hidden="true">♥</span>
+                                    <span>{% if post['id'] in liked_post_ids %}Unlike{% else %}Like{% endif %}</span>
                                     <span class="action-count">{{ post['like_count'] }}</span>
                                 </button>
                             </form>
@@ -77,8 +86,8 @@
                                 <button class="action-button comment-submit" type="submit"><span class="action-icon" aria-hidden="true">↗</span><span>Comment</span></button>
                             </form>
                         {% else %}
-                            <span class="action-button action-static"><span class="action-icon" aria-hidden="true">♡</span><span>Likes</span><span class="action-count">{{ post['like_count'] }}</span></span>
-                            <a class="action-button action-static" href="{{ url_for('login') }}"><span class="action-icon" aria-hidden="true">◌</span><span>Log in to interact</span></a>
+                            <span class="action-button action-static"><span class="action-icon" aria-hidden="true">♥</span><span>Likes</span><span class="action-count">{{ post['like_count'] }}</span></span>
+                            <a class="action-button action-static" href="{{ url_for('login') }}"><span class="action-icon" aria-hidden="true">↗</span><span>Log in to interact</span></a>
                         {% endif %}
                     </div>
                     {% if comments_by_post[post['id']] %}

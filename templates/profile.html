@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}@{{ user['username'] }} — NOVA{% endblock %}
+{% block title %}{{ user['username'] }} · NOVA{% endblock %}
 {% block content %}
     <section class="profile-hero glass-card">
         <div class="profile-avatar">{{ user['username'][0]|upper }}</div>
@@ -17,11 +17,18 @@
             {% for post in posts %}
                 <article class="post-card glass-card">
                     <div class="post-header">
-                        <div class="post-identity"><span class="avatar avatar-soft">{{ user['username'][0]|upper }}</span><span><strong>@{{ user['username'] }}</strong><span class="post-time">{{ post['created_at'] }}</span></span></div>
+                        <div class="post-identity">
+                            <span class="avatar avatar-soft">{{ user['username'][0]|upper }}</span><span><strong>@{{ user['username'] }}</strong><span class="post-time">{{ post['created_at'] }}</span></span>
+                        </div>
                         <span class="post-index">{{ '%02d'|format(loop.index) }}</span>
                     </div>
-                    <p class="post-content">{{ post['content'] }}</p>
-                    <div class="profile-post-meta"><span class="action-icon" aria-hidden="true">♡</span> {{ post['like_count'] }} {% if post['like_count'] != 1 %}likes{% else %}like{% endif %}</div>
+                    {% if post['content'] %}<p class="post-content">{{ post['content'] }}</p>{% endif %}
+                    {% if post['video'] %}
+                        <video class="post-video" controls preload="metadata" poster="{{ url_for('static', filename='video-poster.svg') }}" src="{{ url_for('uploaded_file', filename=post['video']) }}">
+                            Your browser does not support embedded video. <a href="{{ url_for('uploaded_file', filename=post['video']) }}">Watch the video</a>.
+                        </video>
+                    {% endif %}
+                    <div class="profile-post-meta"><span class="action-icon" aria-hidden="true">♥</span> {{ post['like_count'] }} {% if post['like_count'] != 1 %}likes{% else %}like{% endif %}</div>
                 </article>
             {% else %}
                 <div class="empty-state glass-card"><div class="empty-icon" aria-hidden="true">✧</div><h3>This orbit is quiet.</h3><p class="muted">This user has not posted yet.</p></div>

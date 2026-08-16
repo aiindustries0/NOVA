@@ -1,20 +1,39 @@
 import os
 import sqlite3
+import uuid
 from datetime import timedelta
 from functools import wraps
 
-from flask import Flask, abort, flash, g, redirect, render_template, request, session, url_for
+from flask import (
+    Flask,
+    abort,
+    flash,
+    g,
+    redirect,
+    render_template,
+    request,
+    send_from_directory,
+    session,
+    url_for,
+)
 from werkzeug.security import check_password_hash, generate_password_hash
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATABASE = os.environ.get("DATABASE_PATH", os.path.join(BASE_DIR, "nova.db"))
+UPLOAD_FOLDER = os.path.join(BASE_DIR, "uploads")
+MAX_VIDEO_SIZE = 25 * 1024 * 1024
+
+# Render free instances have EPHEMERAL storage, so uploads vanish on redeploy.
+# That is acceptable for this MVP; durable object storage can be added later.
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 app = Flask(__name__)
 # Keep the key stable across restarts by sourcing it from the environment in production.
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "nova-development-secret-key")
 app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(days=30)
 app.config["DATABASE"] = DATABASE
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 
 def get_db():
@@ -48,6 +67,7 @@ def init_db():
             user_id INTEGER NOT NULL,
             title TEXT NOT NULL,
             body TEXT NOT NULL,
+            video TEXT NULL,
             created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
         );
@@ -72,6 +92,12 @@ def init_db():
         );
         """
     )
+    # Migration-safe for databases created before video support was added.
+    post_columns = {
+        row["name"] for row in db.execute("PRAGMA table_info(posts)").fetchall()
+    }
+    if "video" not in post_columns:
+        db.execute("ALTER TABLE posts ADD COLUMN video TEXT")
     db.commit()
 
 
@@ -104,7 +130,7 @@ def load_posts(user_id=None):
     """Load posts for the feed or one profile using the same display shape."""
     db = get_db()
     query = (
-        "SELECT p.id, p.user_id, p.title, p.body, p.body AS content, p.created_at, "
+        "SELECT p.id, p.user_id, p.title, p.body, p.body AS content, p.video, p.created_at, "
         "u.email, u.email AS username, COUNT(DISTINCT l.id) AS like_count "
         "FROM posts AS p JOIN users AS u ON u.id = p.user_id "
         "LEFT JOIN likes AS l ON l.post_id = p.id "
@@ -222,21 +248,59 @@ def logout():
 def create_post():
     body = (request.form.get("body") or request.form.get("content") or "").strip()
     title = request.form.get("title", "").strip()
-    if not body:
+    video = request.files.get("video")
+    has_video = video is not None and bool(video.filename)
+
+    if not body and not has_video:
         flash("A post cannot be empty.")
         return redirect(url_for("feed"))
+
+    video_filename = None
+    if has_video:
+        extension = os.path.splitext(video.filename)[1].lower()
+        if extension not in {".mp4", ".webm", ".mov"}:
+            flash("Videos must be MP4, WebM, or QuickTime (.mov) files.")
+            return redirect(url_for("feed"))
+
+        # Multipart overhead is small, so reject clearly oversized requests early;
+        # the exact saved file size is checked below as the authoritative limit.
+        if request.content_length and request.content_length > MAX_VIDEO_SIZE + (1024 * 1024):
+            flash("Videos must be 25 MB or smaller.")
+            return redirect(url_for("feed"))
+
+        video_filename = f"{uuid.uuid4().hex}{extension}"
+        video_path = os.path.join(app.config["UPLOAD_FOLDER"], video_filename)
+        try:
+            video.save(video_path)
+            if os.path.getsize(video_path) > MAX_VIDEO_SIZE:
+                os.remove(video_path)
+                video_filename = None
+                flash("Videos must be 25 MB or smaller.")
+                return redirect(url_for("feed"))
+        except OSError:
+            if os.path.exists(video_path):
+                os.remove(video_path)
+            video_filename = None
+            flash("The video could not be saved. Please try again.")
+            return redirect(url_for("feed"))
+
     if not title:
-        title = body.splitlines()[0][:80]
+        title = body.splitlines()[0][:80] if body else "Video post"
     db = get_db()
     db.execute(
-        "INSERT INTO posts (user_id, title, body) VALUES (?, ?, ?)",
-        (current_user()["id"], title, body),
+        "INSERT INTO posts (user_id, title, body, video) VALUES (?, ?, ?, ?)",
+        (current_user()["id"], title, body, video_filename),
     )
     db.commit()
     flash("Your post is live.")
     # Redirect to the global feed so the newly committed post is re-queried
     # immediately and appears with every other user's posts.
     return redirect(url_for("feed"))
+
+
+@app.route("/uploads/<filename>")
+def uploaded_file(filename):
+    return send_from_directory(app.config["UPLOAD_FOLDER"], filename)
 
 
 @app.route("/like/<int:post_id>", methods=["POST"])
