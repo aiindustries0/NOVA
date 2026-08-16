@@ -15,7 +15,6 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "change-this-secret-key")
 app.config["DATABASE"] = os.path.join(app.instance_path, "nova.db")
 
-
 # Create the instance folder before SQLite tries to create the database file.
 os.makedirs(app.instance_path, exist_ok=True)
 
@@ -24,7 +23,7 @@ def get_db():
     """Open one database connection for the current request."""
     if "db" not in g:
         g.db = sqlite3.connect(app.config["DATABASE"])
-        g.dbnrow_factory = sqlite3.Row
+        g.db.row_factory = sqlite3.Row
     return g.db
 
 
@@ -48,10 +47,22 @@ def init_db():
         );
 
         CREATE TABLE IF NOT EXISTS posts (
-            id INTEGER PRIMARY` KEY AUTOINCREMENT,
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
             user_id INTEGER NOT NULL,
             content TEXT NOT NULL,
             created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (user_id) REFERENCES users (id)
         );
+        """
+    )
 
+
+@app.route("/", methods=["GET"])
+def health_check():
+    """Return a lightweight response for Render's health check."""
+    return "NOVA is running", 200
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", "5000"))
+    app.run(host="0.0.0.0", port=port, debug=False)
