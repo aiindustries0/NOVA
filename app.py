@@ -1,6 +1,7 @@
 """NOVA: a tiny social-network MVP built with Flask and SQLite.
 
-This file keeps the app intentionally small so it is easy to read and extend.
+This file keeps the app intentionally small so it is easy to read and
+extend.
 """
 
 import os
@@ -13,10 +14,16 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "change-this-secret-key")
-app.config["DATABASE"] = os.path.join(app.instance_path, "nova.db")
+app.config["DATABASE"] = os.environ.get(
+    "DATABASE_PATH", os.path.join(app.instance_path, "nova.db")
+)
 
-# Create the instance folder before SQLite tries to create the database file.
+# Ensure the default instance directory (or a configured database directory)
+# exists before SQLite tries to create the database file.
 os.makedirs(app.instance_path, exist_ok=True)
+database_dir = os.path.dirname(app.config["DATABASE"])
+if database_dir:
+    os.makedirs(database_dir, exist_ok=True)
 
 
 def get_db():
@@ -55,11 +62,18 @@ def init_db():
         );
         """
     )
+    database.commit()
+
+
+# Gunicorn imports ``app`` without executing the __main__ block, so initialize
+# the small SQLite schema during application setup instead of on first request.
+with app.app_context():
+    init_db()
 
 
 @app.route("/", methods=["GET"])
 def health_check():
-    """Return a lightweight response for Render's health check."""
+    """Return a lightweight 200 response for Render's health check."""
     return "NOVA is running", 200
 
 
