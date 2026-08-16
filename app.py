@@ -1,152 +1,310 @@
-IiIiTk9WQTogYSB0aW55IHNvY2lhbC1uZXR3b3JrIE1WUCBidWlsdCB3aXRo
-IEZsYXNrIGFuZCBTUUxpdGUuCgpUaGlzIGZpbGUga2VlcHMgdGhlIGFwcCBp
-bnRlbnRpb25hbGx5IHNtYWxsIHNvIGl0IGlzIGVhc3kgdG8gcmVhZCBhbmQg
-ZXh0ZW5kLgoiIiIKCmltcG9ydCBvcwppbXBvcnQgc3FsaXRlMwpmcm9tIGZ1
-bmN0b29scyBpbXBvcnQgd3JhcHMKCmZyb20gZmxhc2sgaW1wb3J0IEZsYXNr
-LCBmbGFzaCwgZywgcmVkaXJlY3QsIHJlbmRlcl90ZW1wbGF0ZSwgcmVxdWVz
-dCwgc2Vzc2lvbiwgdXJsX2Zvcgpmcm9tIHdlcmt6ZXVnLnNlY3VyaXR5IGlt
-cG9ydCBjaGVja19wYXNzd29yZF9oYXNoLCBnZW5lcmF0ZV9wYXNzd29yZF9o
-YXNoCgoKYXBwID0gRmxhc2soX19uYW1lX18pCmFwcC5jb25maWdbIlNFQ1JF
-VF9LRVkiXSA9IG9zLmVudmlyb24uZ2V0KCJTRUNSRVRfS0VZIiwgImNoYW5n
-ZS10aGlzLXNlY3JldC1rZXkiKQphcHAuY29uZmlnWyJEQVRBQkFTRSJdID0g
-b3MucGF0aC5qb2luKGFwcC5pbnN0YW5jZV9wYXRoLCAibm92YS5kYiIpCgoK
-IyBDcmVhdGUgdGhlIGluc3RhbmNlIGZvbGRlciBiZWZvcmUgU1FMaXRlIHRy
-aWVzIHRvIGNyZWF0ZSB0aGUgZGF0YWJhc2UgZmlsZS4Kb3MubWFrZWRpcnMo
-YXBwLmluc3RhbmNlX3BhdGgsIGV4aXN0X29rPVRydWUpCgoKZGVmIGdldF9k
-YigpOgogICAgIiIiT3BlbiBvbmUgZGF0YWJhc2UgY29ubmVjdGlvbiBmb3Ig
-dGhlIGN1cnJlbnQgcmVxdWVzdC4iIiIKICAgIGlmICJkYiIgbm90IGluIGc6
-CiAgICAgICAgZy5kYiA9IHNxbGl0ZTMuY29ubmVjdChhcHAuY29uZmlnWyJE
-QVRBQkFTRSJdKQogICAgICAgIGcuZGIucm93X2ZhY3RvcnkgPSBzcWxpdGUz
-LlJvdwogICAgcmV0dXJuIGcuZGIKCgpAYXBwLnRlYXJkb3duX2FwcGNvbnRl
-eHQKZGVmIGNsb3NlX2RiKGVycm9yPU5vbmUpOgogICAgIiIiQ2xvc2UgdGhl
-IGRhdGFiYXNlIGNvbm5lY3Rpb24gd2hlbiB0aGUgcmVxdWVzdCBpcyBmaW5p
-c2hlZC4iIiIKICAgIGRhdGFiYXNlID0gZy5wb3AoImRiIiwgTm9uZSkKICAg
-IGlmIGRhdGFiYXNlIGlzIG5vdCBOb25lOgogICAgICAgIGRhdGFiYXNlLmNs
-b3NlKCkKCgpkZWYgaW5pdF9kYigpOgogICAgIiIiQ3JlYXRlIHRoZSB0YWJs
-ZXMgdGhlIGZpcnN0IHRpbWUgdGhlIGFwcCBzdGFydHMuIiIiCiAgICBkYXRh
-YmFzZSA9IGdldF9kYigpCiAgICBkYXRhYmFzZS5leGVjdXRlc2NyaXB0KAog
-ICAgICAgICIiIgogICAgICAgIENSRUFURSBUQUJMRSBJRiBOT1QgRVhJU1RT
-IHVzZXJzICgKICAgICAgICAgICAgaWQgSU5URUdFUiBQUklNQVJZIEtFWSBB
-VVRPSU5DUkVNRU5ULAogICAgICAgICAgICB1c2VybmFtZSBURVhUIE5PVCBO
-VUxMIFVOSVFVRSwKICAgICAgICAgICAgcGFzc3dvcmRfaGFzaCBURVhUIE5P
-VCBOVUxMCiAgICAgICAgKTsKCiAgICAgICAgQ1JFQVRFIFRBQkxFIElGIE5P
-VCBFWElTVFMgcG9zdHMgKAogICAgICAgICAgICBpZCBJTlRFR0VSIFBSSU1B
-UlkgS0VZIEFVVE9JTkNSRU1FTlQsCiAgICAgICAgICAgIHVzZXJfaWQgSU5U
-RUdFUiBOT1QgTlVMTCwKICAgICAgICAgICAgY29udGVudCBURVhUIE5PVCBO
-VUxMLAogICAgICAgICAgICBjcmVhdGVkX2F0IFRJTUVTVEFNUCBOT1QgTlVM
-TCBERUZBVUxUIENVUlJFTl9USU1FU1RBTVAsCiAgICAgICAgICAgIEZPUkVJ
-SUdOIEtFWSAodXNlcl9pZCkgUkVGRVJFTkNFUyB1c2VycyAoaWQpCiAgICAg
-ICAgKTsKCiAgICAgICAgQ1JFQVRFIFRBQkxFIElGIE5PVCBFWElTVFMgbGlr
-ZXMgKAogICAgICAgICAgICB1c2VyX2lkIElOVEVHRVIgTk9UIE5VTEwsCiAg
-ICAgICAgICAgIHBvc3RfaWQgSU5URUdFUiBOT1QgTlVMTCwKICAgICAgICAg
-ICAgUFJJTUFSWSBLRVkgKHVzZXJfaWQsIHBvc3RfaWQpLAogICAgICAgICAg
-ICBGT1JFSUdOIEtFWSAodXNlcl9pZCkgUkVGRVJFTkNFUyB1c2VycyAoaWQp
-LAogICAgICAgICAgICBGT1JFSUdOIEtFWSAocG9zdF9pZCkgUkVGRVJFTkNF
-UyBwb3N0cyAoaWQpCiAgICAgICAgKTsKCiAgICAgICAgQ1JFQVRFIFRBQkxF
-IElGIE5PVCBFWElTVFMgY29tbWVudHMgKAogICAgICAgICAgICBpZCBJTlRF
-R0VSIFBSSU1BUlkgS0VZIEFVVE9JTkNSRU1FTlQsCiAgICAgICAgICAgIHVz
-ZXJfaWQgSU5URUdFUiBOT1QgTlVMTCwKICAgICAgICAgICAgcG9zdF9pZCBJ
-TlRFR0VSIE5PVCBOVUxMLAogICAgICAgICAgICBjb250ZW50IFRFWFQgTk9U
-IE5VTEwsCiAgICAgICAgICAgIGNyZWF0ZWRfYXQgVElNRVNUQU1QIE5PVCBO
-VUxMIERFRkFVTFQgQ1VSUkVOVF9USU1FU1RBTVAsCiAgICAgICAgICAgIEZP
-UkVJR04gS0VZICh1c2VyX2lkKSBSRUZFUkVOQ0VTIHVzZXJzIChpZCksCiAg
-ICAgICAgICAgIEZPUkVJR04gS0VZIChwb3N0X2lkKSBSRUZFUkVOQ0VTIHBv
-c3RzIChpZCkKICAgICAgICApOwogICAgICAgICIiIgogICAgKQogICAgZGF0
-YWJhc2UuY29tbWl0KCkKCgp3aXRoIGFwcC5hcHBfY29udGV4dCgpOgogICAg
-aW5pdF9kYigpCgoKZGVmIGxvZ2luX3JlcXVpcmVkKHZpZXcpOgogICAgIiIi
-U2VuZCB2aXNpdG9ycyB0byBsb2dpbiBiZWZvcmUgdGhleSB1c2UgYSBtZW1i
-ZXItb25seSBwYWdlLiIiIgogICAgQHdyYXBzKHZpZXcpCiAgICBkZWYgd3Jh
-cHBlZF92aWV3KCoqa3dhcmdzKToKICAgICAgICBpZiAidXNlcl9pZCIgbm90
-IGluIHNlc3Npb246CiAgICAgICAgICAgIGZsYXNoKCJQbGVhc2UgbG9nIGlu
-IGZpcnN0LiIpCiAgICAgICAgICAgIHJldHVybiByZWRpcmVjdCh1cmxfZm9y
-KCJsb2dpbiIpKQogICAgICAgIHJldHVybiB2aWV3KCoqa3dhcmdzKQoKICAg
-IHJldHVybiB3cmFwcGVkX3ZpZXcKCgpAYXBwLmNvbnRleHRfcHJvY2Vzc29y
-CmRlZiBhZGRfbG9nZ2VkX2luX3VzZXIoKToKICAgICIiIk1ha2UgdGhlIGxv
-Z2dlZC1pbiB1c2VyJ3MgbmFtZSBhdmFpbGFibGUgdG8gZXZlcnkgdGVtcGxh
-dGUuIiIiCiAgICB1c2VyID0gTm9uZQogICAgaWYgInVzZXJfaWQiIGluIHNl
-c3Npb246CiAgICAgICAgdXNlciA9IGdldF9kYigpLmV4ZWN1dGUoCiAgICAg
-ICAgICAgICJTRUxFQ1QgaWQsIHVzZXJuYW1lIEZST00gdXNlcnMgV0hFUkUg
-aWQgPSA/IiwgKHNlc3Npb25bInVzZXJfaWQiXSwpCiAgICAgICAgKS5mZXRj
-aG9uZSgpCiAgICByZXR1cm4geyJsb2dnZWRfaW5fdXNlciI6IHVzZXJ9CgoK
-QGFwcC5yb3V0ZSgiLyIpCmRlZiBpbmRleCgpOgogICAgIiIiU2hvdyBldmVy
-eSBwb3N0LCBuZXdlc3QgZmlyc3QsIHdpdGggaXRzIGxpa2VzIGFuZCBjb21t
-ZW50cy4iIiIKICAgIGRhdGFiYXNlID0gZ2V0X2RiKCkKICAgIHBvc3RzID0g
-ZGF0YWJhc2UuZXhlY3V0ZSgKICAgICAgICAiIiIKICAgICAgICBTRUxFQ1Qg
-cG9zdHMuaWQsIHBvc3RzLmNvbnRlbnQsIHBvc3RzLmNyZWF0ZWRfYXQsIHVz
-ZXJzLnVzZXJuYW1lLAogICAgICAgICAgICAgICBDT1VOVChESVNUSU5DVCBs
-aWtlcy51c2VyX2lkKSBBUyBsaWtlX2NvdW50CiAgICAgICAgRlJPTSBwb3N0
-cwogICAgICAgIEpPSU4gdXNlcnMgT04gdXNlcnMuaWQgPSBwb3N0cy51c2Vy
-X2lkCiAgICAgICAgTEVGVCBKT0lOIGxpa2VzIE9OIGxpa2VzLnBvc3RfaWQg
-PSBwb3N0cy5pZAogICAgICAgIEdST1VQIEJZIHBvc3RzLmlkCiAgICAgICAg
-T1JERVIgQlkgcG9zdHMuY3JlYXRlZF9hdCBERVNDLCBwb3N0cy5pZCBERVND
-CiAgICAgICAgIiIiCiAgICApLmZldGNoYWxsKCkKCiAgICBjb21tZW50c19i
-eV9wb3N0ID0ge30KICAgIGZvciBwb3N0IGluIHBvc3RzOgogICAgICAgIGNv
-bW1lbnRzX2J5X3Bvc3RbcG9zdFsiaWQiXV0gPSBkYXRhYmFzZS5leGVjdXRl
-KAogICAgICAgICAgICAiIiIKICAgICAgICAgICAgU0VMRUNUIGNvbW1lbnRz
-LmNvbnRlbnQsIGNvbW1lbnRzLmNyZWF0ZWRfYXQsIHVzZXJzLnVzZXJuYW1l
-CiAgICAgICAgICAgIEZST00gY29tbWVudHMKICAgICAgICAgICAgSk9JTiB1
-c2VycyBPTiB1c2Vycy5pZCA9IGNvbW1lbnRzLnVzZXJfaWQKICAgICAgICAg
-ICAgV0hFUkUgY29tbWVudHMucG9zdF9pZCA9ID8KICAgICAgICAgICAgT1JE
-RVIgQlkgY29tbWVudHMuY3JlYXRlZF9hdCBBU0MsIGNvbW1lbnRzLmlkIEFT
-QwogICAgICAgICAgICAiIiIsCiAgICAgICAgICAgIChwb3N0WyJpZCJdLCks
-ICAgICAgICAgKS5mZXRjaGFsbCgpCgogICAgbGlrZWRfcG9zdF9pZHMgPSBz
-ZXQoKQogICAgaWYgInVzZXJfaWQiIGluIHNlc3Npb246CiAgICAgICAgbGlr
-ZWRfcm93cyA9IGRhdGFiYXNlLmV4ZWN1dGUoCiAgICAgICAgICAgICJTRUxF
-Q1QgcG9zdF9pZCBGUk9NIGxpa2VzIFdIRVJFIHVzZXJfaWQgPSA/IiwgKHNl
-c3Npb25bInVzZXJfaWQiXSwpCiAgICAgICAgKS5mZXRjaGFsbCgpCiAgICAg
-ICAgbGlrZWRfcG9zdF9pZHMgPSB7cm93WyJwb3N0X2lkIl0gZm9yIHJvdyBp
-biBsaWtlZF9yb3dzfQoKICAgIHJldHVybiByZW5kZXJfdGVtcGxhdGUoCiAg
-ICAgICAgImluZGV4Lmh0bWwiLAogICAgICAgIHBvc3RzPXBvc3RzLAogICAg
-ICAgIGNvbW1lbnRzX2J5X3Bvc3Q9Y29tbWVudHNfYnlfcG9zdCwKICAgICAg
-ICBsaWtlZF9wb3N0X2lkcz1saWtlZF9wb3N0X2lkcywKICAgICkKCgpAYXBw
-LnJvdXRlKCIvcmVnaXN0ZXIiLCBtZXRob2RzPSgiR0VUIiwgIlBPU1QiKSkK
-ZGVmIHJlZ2lzdGVyKCk6CiAgICAiIiJDcmVhdGUgYSBuZXcgYWNjb3VudC4i
-IiIKICAgIGlmIHJlcXVlc3QubWV0aG9kID09ICJQT1NUIjoKICAgICAgICB1
-c2VybmFtZSA9IHJlcXVlc3QuZm9ybVsidXNlcm5hbWUiXS5zdHJpcCgpCiAg
-ICAgICAgcGFzc3dvcmQgPSByZXF1ZXN0LmZvcm1bInBhc3N3b3JkIl0KICAg
-ICAgICBlcnJvciA9IE5vbmUKICAgICAgICBpZiBub3QgdXNlcm5hbWU6CiAg
-ICAgICAgICAgIGVycm9yID0gIlVzZXJuYW1lIGlzIHJlcXVpcmVkLiIKICAg
-ICAgICBlbGlmIG5vdCBwYXNzd29yZDoKICAgICAgICAgICAgZXJyb3IgPSAi
-UGFzc3dvcmQgaXMgcmVxdWlyZWQuIgogICAgICAgIGVsaWYgbGVuKHVzZXJu
-bmFtZSkgPiAzMDoKICAgICAgICAgICAgZXJyb3IgPSAiVXNlcm5hbWUgbXVz
-dCBiZSAzMCBjaGFyYWN0ZXJzIG9yIGZld2VyLiIKCiAgICAgICAgaWYgZXJy
-b3IgaXMgTm9uZToKICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAg
-ZGF0YWJhc2UgPSBnZXRfZGIoKQogICAgICAgICAgICAgICAgZGF0YWJhc2Uu
-ZXhlY3V0ZSgKICAgICAgICAgICAgICAgICAgICAiSU5TRVJUIElOVE8gdXNl
-cnMgKHVzZXJuYW1lLCBwYXNzd29yZF9oYXNoKSBWQUxVRVMgKD8sID8pIiwK
-ICAgICAgICAgICAgICAgICAgICAodXNlcm5hbWUsIGdlbmVyYXRlX3Bhc3N3
-b3JkX2hhc2gocGFzc3dvcmQpKSwKICAgICAgICAgICAgICAgICkKICAgICAg
-ICAgICAgICAgIGRhdGFiYXNlLmNvbW1pdCgpCiAgICAgICAgICAgIGV4Y2Vw
-dCBzcWxpdGUzLkludGVncml0eUVycm9yOgogICAgICAgICAgICAgICAgZXJy
-b3IgPSAiVGhhdCB1c2VybmFtZSBpcyBhbHJlYWR5IHRha2VuLiIKICAgICAg
-ICAgICAgZWxzZToKICAgICAgICAgICAgICAgIGZsYXNoKCJBY2NvdW50IGNy
-ZWF0ZWQuIFlvdSBjYW4gbm93IGxvZyBpbi4iKQogICAgICAgICAgICAgICAg
-cmV0dXJuIHJlZGlyZWN0KHVybF9mb3IoImxvZ2luIikpCgogICAgICAgIGZs
-YXNoKGVycm9yKQoKICAgIHJldHVybiByZW5kZXJfdGVtcGxhdGUoInJlZ2lz
-dGVyLmh0bWwiKQoKCkBhcHAucm91dGUoIi9sb2dpbiIsIG1ldGhvZHM9KCJH
-RVQiLCAiUE9TVCIpKQpkZWYgbG9naW4oKToKICAgICIiIkxvZyBhIHVzZXIg
-aW4gd2l0aCBhIHVzZXJuYW1lIGFuZCBwYXNzd29yZC4iIiIKICAgIGlmIHJl
-cXVlc3QubWV0aG9kID09ICJQT1NUIjoKICAgICAgICB1c2VybmFtZSA9IHJl
-cXVlc3QuZm9ybVsidXNlcm5hbWUiXS5zdHJpcCgpCiAgICAgICAgcGFzc3dv
-cmQgPSByZXF1ZXN0LmZvcm1bInBhc3N3b3JkIl0KICAgICAgICB1c2VyID0g
-Z2V0X2RiKCkuZXhlY3V0ZSgKICAgICAgICAgICAgIlNFTEVDVCAqIEZST00g
-dXNlcnMgV0hFUkUgdXNlcm5hbWUgPSA/IiwgKHVzZXJuYW1lLCkKICAgICAg
-ICApLmZldGNob25lKCkKCiAgICAgICAgaWYgdXNlciBpcyBOb25lIG9yIG5v
-dCBjaGVja19wYXNzd29yZF9oYXNoKHVzZXJbInBhc3N3b3JkX2hhc2giXSwg
-cGFzc3dvcmQpOgogICAgICAgICAgICBmbGFzaCgiSW5jb3JyZWN0IHVzZXJu
-YW1lIG9yIHBhc3N3b3JkLiIpCiAgICAgICAgZWxzZToKICAgICAgICAgICAg
-c2Vzc2lvbi5jbGVhcigpCiAgICAgICAgICAgIHNlc3Npb25bInVzZXJfaWQi
-XSA9IHVzZXJbImlkIl0KICAgICAgICAgICAgcmV0dXJuIHJlZGlyZWN0KHVy
-bF9mb3IoImluZGV4IikpCgogICAgcmV0dXJuIHJlbmRlcl90ZW1wbGF0ZSgi
-bG9naW4uaHRtbCIpCgoKQGFwcC5yb3V0ZSgiL2xvZ291dCIpCmRlZiBsb2dv
-dXQoKToKICAgICIiIkxvZyB0aGUgY3VycmVudCB1c2VyIG91dC4iIiIKICAg
-IHNlc3Npb24uY2xlYXIoKQogICAgZmxhc2goIllvdSBhcmUgbG9nZ2VkIG91
-dC4iKQogICAgcmV0dXJuIHJlZGlyZWN0KHVybF9mb3IoImluZGV4IikpCgoK
-QGFwcC5yb3V0ZSgiL3Bvc3QiLCBtZXRob2RzPSgiUE9TVCIsKSkKQGxvZ2lu
-X3JlcXVpcmVkCmRlZiBjcmVhdGVfcG9zdCgpOgogICAgIiIiQWRkIGEgc2hv
-cnQgcG9zdCB0byB0aGUgZmVlZC4iIiIKICAgIGNvbnRlbnQgPSByZXF1ZXN0
-LmZvcm1bImNvbnRlbnQiXS5zdHJpcCgpCiAgICBpZiBub3QgY29udGVudDoK
-ICAgICAgICBmbGFzaCgiQSBwb3N0IGNhbm5vdCBiZSBlbXB0eS4iKQogICAg
-ZWxpZiBsZW4oY29udGVudCkgPiA1MDA6CiAgICAgICAgZmxhc2goIlBvc3Rz
-IG11c3QgYmUgNTAwIGNoYXJhY3RlcnMgb3IgZmV3ZXIuIikKICAgIGVsc2U6
-ICAgICAgICBkYXRhYmFzZSA9IGdldF9kYigpCiAgICAgICAgZGF0YWJhc2UKICAgICAgICBkYXRhYmFzZS5leGVjdXRlKAogICAgICAgICAgICAiSU5TRVJUIElOVE8gcG9zdHMgKHVzZXJfaWQsIGNvbnRlbnQpIFZBTFVFTSAoPywgPykiLAogICAgICAgICAgICAoc2Vzc2lvblsidXNlcl9pZCJdLCBjb250ZW50KSwKICAgICAgICAgICkKICAgICAgICAgIGRhdGFiYXNlLmNvbW1pdCgpCiAgICAgICAgZmxhc2goIlBvc3QgcHVibGlzaGVkISIpCiAgICByZXR1cm4gcmVkaXJlY3QodXJsX2ZvcigiaW5kZXgiKSkKCgpAYXBwLnJvdXRlKCIvcG9zdC88aW50OnBvc3RfaWQ+L2xpa2UiLCBtZXRob2RzPSgiUE9TVCIsKSkKQGxvZ2luX3JlcXVpcmVkCmRlZiBsaWtlKHBvc3RfaWQpOgogICAgIiIiVG9nZ2xlIHRoZSBjdXJyZW50IHVzZXIncyBsaWtlIG9uIGEgcG9zdC4iIiIKICAgIGRhdGFiYXNlID0gZ2V0X2RiKCkKICAgIGV4aXN0aW5nX2xpa2UgPSBkYXRhYmFzZS5leGVjdXRlKAogICAgICAgICJTRUxFQ1QgMSBGUk9NIGxpa2VzIFdIRVJFIHVzZXJfaWQgPSA/IHHNRCBhbmQgcG9zdF9pZCA9ID8iLAogICAgICAgIChzZXNzaW9uWyJ1c2VyX2lkIl0sIHBvc3RfaWQpLAogICAgKS5mZXRjaG9uZSgpCiAgICBpZiBleGlzdGluZ19saWtlOgogICAgICAgIGRhdGFiYXNlLmV4ZWN1dGUoCiAgICAgICAgICAgICJERUxFVEUgRlJPTSBsaWtlcyBXSEVSRSB1c2VyX2lkID0gPyBBTkQgcG9zdF9pZCA9ID8iLAogICAgICAgICAgICAoc2Vzc2lvblsidXNlcl9pZCJdLCBwb3N0X2lkKSwKICAgICAgICAgICkKICAgIGVsc2U6CiAgICAgICAgZGF0YWJhc2UuZXhlY3V0ZSgKICAgICAgICAgICAgIklOU0VSVCBPUiBJR05PUkUgSU5UTyBsaWtlcyAodXNlcl9pZCwgcG9zdF9pZCkgVkFMVUVTICg/LCA/KSIKICAgICAgICAgICAgKHNlc3Npb25bInVzZXJfaWQiXSwgcG9zdF9pZCksCiAgICAgICAgICkKICAgICAgICBkYXRhYmFzZS5jb21taXQoKQogICAgcmV0dXJuIHJlZGlyZWN0KHJlcXVlc3QucmVmZXJyZXIgb3IgdXJsX2ZvciwiaW5kZXgiKSkKCgpAYXBwLnJvdXRlKCIvcG9zdC88aW50OnBvc3RfaWQ+L2NvbW1lbnQiLCBtZXRob2RzPSgiUE9TVCIsKSkKQGxvZ2luX3JlcXVpcmVkCmRlZiBjb21tZW50KHBvc3RfaWQpOgogICAgIiIiQWRkIGEgY29tbWVudCB0byBhIHBvc3QuIiIiCiAgICBjb250ZW50ID0gcmVxdWVzdC5mb3JtWyJjb250ZW50Il0uc3RyaXAoKQogICAgaWYgbm90IGNvbnRlbnQ6CiAgICAgICAgZmxhc2goIkEgY29tbWVudCBjYW5ub3QgYmUgZW1wdHkuIikKICAgIGVsaWYgbGVuKGNvbnRlbnQpID4gMzAwOgogICAgICAgIGZsYXNoKCJDb21tZW50cyBtdXN0IGJlIDMwMCBjaGFyYWN0ZXJzIG9yIGZld2VyLiIpCiAgICBlbHNlOgogICAgICAgIGRhdGFiYXNlID0gZ2V0X2RiKCkKICAgICAgICBwb3N0X2V4aXN0cyA9IGRhdGFiYXNlLmV4ZWN1dGUoCiAgICAgICAgICAgICJTRUxFQ1QgMSBGUk9NIHBvc3RzIFdIRVJFIGlkID0gPyIsIChwb3N0X2lkLCkpCiAgICAgICAgKS5mZXRjaG9uZSgpCiAgICAgICAgaWYgcG9zdF9leGlzdHM6CiAgICAgICAgICAgIGRhdGFiYXNlLmV4ZWN1dGUoCiAgICAgICAgICAgICAgICAiSU5TRVJUIElOVE8gY29tbWVudHMgKHVzZXJfaWQsIHBvc3RfaWQsIGNvbnRlbnQpIFZBTFVFUyAoPywgPywgPykiLAogICAgICAgICAgICAgICAgKHNlc3Npb25bInVzZXJfaWQiXSwgcG9zdF9pZCwgY29udGVudCksCiAgICAgICAgICAgICkKICAgICAgICAgICAgZGF0YWJhc2UuY29tbWl0KCkKICAgIHJldHVybiByZWRpcmVjdChyZXF1ZXN0LnJlZmVycmVyIG9yIHVybF9mb3IoImluZGV4IikpCgoKQGFwcC5yb3V0ZSgiL3Byb2ZpbGUvPHVzZXJuYW1lPiIpCmRlZiBwcm9maWxlKHVzZXJuYW1lKToKICAgICIiIlNob3cgYSB1c2VyJ3MgcHJvZmlsZSBhbmQgcG9zdHMuIiIiCiAgICBkYXRhYmFzZSA9IGdldF9kYigpCiAgICB1c2VyID0gZGF0YWJhc2UuZXhlY3V0ZSgKICAgICAgICAiU0VMRUNUIGlkLCB1c2VybmFtZSBGUk9NIHVzZXJzIFdIRVJFIHVzZXJuYW1lID0gPyIsICh1c2VybmFtZSwpCiAgICApLmZldGNob25lKCkKICAgIGlmIHVzZXIgaXMgTm9uZToKICAgICAgICByZXR1cm4gIlVzZXIgbm90IGZvdW5kIiwgNDA0CgogICAgcG9zdHMgPSBkYXRhYmFzZS5leGVjdXRlKAogICAgICAgICIiIgogICAgICAgIFNFTEVDVCBwb3N0cy5pZCwgcG9zdHMuY29udGVudCwgcG9zdHMuY3JlYXRlZF9hdCwKICAgICAgICAgICAgICAgQ09VTlQobGlrZXMudXNlcl9pZCkgQVMgbGlrZV9jb3VudAogICAgICAgIEZST00gcG9zdHMKICAgICAgICBMRUZUIEpPSU4gbGlrZXMgT04gbGlrZXMucG9zdF9pZCA9IHBvc3RzLmlkCiAgICAgICAgV0hFUkUgcG9zdHMudXNlcl9pZCA9ID8KICAgICAgICBHUk9VUCBCWSBwb3N0cy5pZAogICAgICAgIE9SREVSIEJZIHBvc3RzLmNyZWF0ZWRfYXQgREVTQywgcG9zdHMuaWQgREVTQwogICAgICAgICIiIiwKICAgICAgICAodXNlclsiaWQiXSwpLAogICAgKS5mZXRjaGFsbCgpCiAgICByZXR1cm4gcmVuZGVyX3RlbXBsYXRlKCJwcm9maWxlLmh0bWwiLCB1c2VyPXVzZXIsIHBvc3RzPXBvc3RzKQoKCmlmIF9fbmFtZV9fID09ICJfX21haW5fXyI6CiAgICBhcHAucnVuKGhvc3Q9IjAuMC4wLjAiLCBwb3J0PWludChvcy5lbnZpcm9uLmdldCgiUE9SVCIsIDUwMDApKSwgZGVidWc9RmFsc2UpCg==
+import os
+import sqlite3
+from functools import wraps
+
+from flask import Flask, abort, flash, g, redirect, render_template, request, session, url_for
+from werkzeug.security import check_password_hash, generate_password_hash
+
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATABASE = os.environ.get("DATABASE_PATH", os.path.join(BASE_DIR, "nova.db"))
+
+app = Flask(__name__)
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "nova-development-secret-key")
+app.config["DATABASE"] = DATABASE
+
+
+def get_db():
+    if "db" not in g:
+        g.db = sqlite3.connect(app.config["DATABASE"])
+        g.db.row_factory = sqlite3.Row
+        g.db.execute("PRAGMA foreign_keys = ON")
+    return g.db
+
+
+@app.teardown_appcontext
+def close_db(_exception=None):
+    db = g.pop("db", None)
+    if db is not None:
+        db.close()
+
+
+def init_db():
+    db = get_db()
+    db.executescript(
+        """
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            email TEXT NOT NULL UNIQUE,
+            password_hash TEXT NOT NULL,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+        );
+
+        CREATE TABLE IF NOT EXISTS posts (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            title TEXT NOT NULL,
+            body TEXT NOT NULL,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+        );
+
+        CREATE TABLE IF NOT EXISTS likes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            post_id INTEGER NOT NULL,
+            UNIQUE (user_id, post_id),
+            FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
+            FOREIGN KEY (post_id) REFERENCES posts (id) ON DELETE CASCADE
+        );
+
+        CREATE TABLE IF NOT EXISTS comments (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            post_id INTEGER NOT NULL,
+            body TEXT NOT NULL,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
+            FOREIGN KEY (post_id) REFERENCES posts (id) ON DELETE CASCADE
+        );
+        """
+    )
+    db.commit()
+
+
+def current_user():
+    user_id = session.get("user_id")
+    if user_id is None:
+        return None
+    user = get_db().execute(
+        "SELECT id, email, password_hash, created_at, email AS username "
+        "FROM users WHERE id = ?",
+        (user_id,),
+    ).fetchone()
+    if user is None:
+        session.clear()
+    return user
+
+
+def login_required(view):
+    @wraps(view)
+    def wrapped_view(*args, **kwargs):
+        if current_user() is None:
+            flash("Please log in to continue.")
+            return redirect(url_for("login"))
+        return view(*args, **kwargs)
+
+    return wrapped_view
+
+
+def load_posts(user_id=None):
+    db = get_db()
+    query = (
+        "SELECT p.id, p.user_id, p.title, p.body, p.created_at, "
+        "u.email, u.email AS username, COUNT(DISTINCT l.id) AS like_count "
+        "FROM posts AS p JOIN users AS u ON u.id = p.user_id "
+        "LEFT JOIN likes AS l ON l.post_id = p.id "
+    )
+    params = []
+    if user_id is not None:
+        query += "WHERE p.user_id = ? "
+        params.append(user_id)
+    query += "GROUP BY p.id ORDER BY p.created_at DESC, p.id DESC"
+    return db.execute(query, params).fetchall()
+
+
+def load_comments(posts):
+    if not posts:
+        return {}
+    post_ids = [post["id"] for post in posts]
+    placeholders = ",".join("?" for _ in post_ids)
+    rows = get_db().execute(
+        "SELECT c.id, c.post_id, c.body AS content, c.created_at, "
+        "u.email, u.email AS username "
+        "FROM comments AS c JOIN users AS u ON u.id = c.user_id "
+        f"WHERE c.post_id IN ({placeholders}) "
+        "ORDER BY c.created_at ASC, c.id ASC",
+        post_ids,
+    ).fetchall()
+    comments = {post_id: [] for post_id in post_ids}
+    for row in rows:
+        comments[row["post_id"]].append(row)
+    return comments
+
+
+def render_feed():
+    user = current_user()
+    posts = load_posts()
+    liked_post_ids = set()
+    if user is not None:
+        liked_post_ids = {
+            row["post_id"]
+            for row in get_db()
+            .execute("SELECT post_id FROM likes WHERE user_id = ?", (user["id"],))
+            .fetchall()
+        }
+    return render_template(
+        "index.html",
+        logged_in_user=user,
+        posts=posts,
+        liked_post_ids=liked_post_ids,
+        comments_by_post=load_comments(posts),
+    )
+
+
+@app.route("/")
+def index():
+    return render_feed()
+
+
+@app.route("/feed")
+def feed():
+    return render_feed()
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        email = (request.form.get("email") or request.form.get("username") or "").strip()
+        password = request.form.get("password", "")
+        if not email or not password:
+            flash("Email and password are required.")
+            return render_template("register.html", logged_in_user=current_user()), 400
+        try:
+            db = get_db()
+            db.execute(
+                "INSERT INTO users (email, password_hash) VALUES (?, ?)",
+                (email, generate_password_hash(password)),
+            )
+            db.commit()
+        except sqlite3.IntegrityError:
+            flash("That email is already registered.")
+            return render_template("register.html", logged_in_user=current_user()), 409
+        flash("Registration complete. Please log in.")
+        return redirect(url_for("login"))
+    return render_template("register.html", logged_in_user=current_user())
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        email = (request.form.get("email") or request.form.get("username") or "").strip()
+        password = request.form.get("password", "")
+        user = get_db().execute(
+            "SELECT id, email, password_hash FROM users WHERE email = ?", (email,)
+        ).fetchone()
+        if user is None or not check_password_hash(user["password_hash"], password):
+            flash("Invalid email or password.")
+            return render_template("login.html", logged_in_user=current_user()), 401
+        session.clear()
+        session["user_id"] = user["id"]
+        flash("Welcome back.")
+        return redirect(url_for("feed"))
+    return render_template("login.html", logged_in_user=current_user())
+
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    flash("You have been logged out.")
+    return redirect(url_for("index"))
+
+
+@app.route("/post", methods=["POST"])
+@login_required
+def create_post():
+    body = (request.form.get("body") or request.form.get("content") or "").strip()
+    title = request.form.get("title", "").strip()
+    if not body:
+        flash("A post cannot be empty.")
+        return redirect(url_for("feed"))
+    if not title:
+        title = body.splitlines()[0][:80]
+    db = get_db()
+    db.execute(
+        "INSERT INTO posts (user_id, title, body) VALUES (?, ?, ?)",
+        (current_user()["id"], title, body),
+    )
+    db.commit()
+    flash("Your post is live.")
+    return redirect(url_for("feed"))
+
+
+@app.route("/like/<int:post_id>", methods=["POST"])
+@login_required
+def like(post_id):
+    db = get_db()
+    if db.execute("SELECT id FROM posts WHERE id = ?", (post_id,)).fetchone() is None:
+        abort(404)
+    user_id = current_user()["id"]
+    existing = db.execute(
+        "SELECT id FROM likes WHERE user_id = ? AND post_id = ?",
+        (user_id, post_id),
+    ).fetchone()
+    if existing is None:
+        db.execute("INSERT INTO likes (user_id, post_id) VALUES (?, ?)", (user_id, post_id))
+    else:
+        db.execute("DELETE FROM likes WHERE id = ?", (existing["id"],))
+    db.commit()
+    return redirect(request.referrer or url_for("feed"))
+
+
+@app.route("/comment/<int:post_id>", methods=["POST"])
+@login_required
+def comment(post_id):
+    db = get_db()
+    if db.execute("SELECT id FROM posts WHERE id = ?", (post_id,)).fetchone() is None:
+        abort(404)
+    body = (request.form.get("body") or request.form.get("content") or "").strip()
+    if not body:
+        flash("A comment cannot be empty.")
+        return redirect(request.referrer or url_for("feed"))
+    db.execute(
+        "INSERT INTO comments (user_id, post_id, body) VALUES (?, ?, ?)",
+        (current_user()["id"], post_id, body),
+    )
+    db.commit()
+    return redirect(request.referrer or url_for("feed"))
+
+
+@app.route("/profile")
+@app.route("/profile/<int:user_id>")
+def profile(user_id=None):
+    if user_id is None:
+        username = request.args.get("username", "").strip()
+        if username:
+            target = get_db().execute(
+                "SELECT id FROM users WHERE email = ?", (username,)
+            ).fetchone()
+            if target is not None:
+                user_id = target["id"]
+        if user_id is None:
+            user = current_user()
+            if user is None:
+                return redirect(url_for("login"))
+            user_id = user["id"]
+    user = get_db().execute(
+        "SELECT id, email, created_at, email AS username FROM users WHERE id = ?",
+        (user_id,),
+    ).fetchone()
+    if user is None:
+        abort(404)
+    posts = load_posts(user_id)
+    return render_template(
+        "profile.html",
+        logged_in_user=current_user(),
+        user=user,
+        posts=posts,
+    )
+
+
+with app.app_context():
+    init_db()
+
+
+if __name__ == "__main__":
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5000)),
+        debug=False,
+    )
