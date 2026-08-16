@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Feed - NOVA{% endblock %}
+{% block content %}
+    <h1>NOVA feed</h1>
+    <p>A small place to share ideas.</p>
+
+    {% if logged_in_user %}
+        <form method="post" action="{{ url_for('create_post') }}">
+            <label for="content">What are you thinking?</label>
+            <textarea id="content" name="content" rows="3" maxlength="500" required></textarea>
+            <button type="submit">Post</button>
+        </form>
+    {% else %}
+        <p><a href="{{ url_for('login') }}">Log in</a> to write a post or interact with the feed.</p>
+    {% endif %}
+
+    {% for post in posts %}
+        <article class="post">
+            <strong><a href="{{ url_for('profile', username=post['username']) }}">@{{ post['username'] }}</a></strong>
+            <div class="muted">{{ post['created_at'] }}</div>
+            <p>{{ post['content'] }}</p>
+            {% if logged_in_user %}
+                <form class="small-form" method="post" action="{{ url_for('like', post_id=post['id']) }}">
+                    <button type="submit">{% if post['id'] in liked_post_ids %}Unlike{% else %}Like{% endif %} ({{ post['like_count'] }})</button>
+                </form>
+                <form method="post" action="{{ url_for('comment', post_id=post['id']) }}">
+                    <input name="content" maxlength="300" placeholder="Write a comment" required>
+                    <button type="submit">Comment</button>
+                </form>
+            {% else %}
+                <span class="muted">Likes: {{ post['like_count'] }}</span>
+            {% endif %}
+
+            {% for item in comments_by_post[post['id']] %}
+                <div class="comment"><strong>@{{ item['username'] }}</strong>: {{ item['content'] }}<br><span class="muted">{{ item['created_at'] }}</span></div>
+            {% endfor %}
+        </article>
+    {% else %}
+        <p>No posts yet. Be the first to share something!</p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}@{{ user['username'] }} - NOVA{% endblock %}
+{% block content %}
+    <h1>@{{ user['username'] }}</h1>
+    <p class="muted">{{ posts|length }} post{% if posts|length != 1 %}s{% endif %}</p>
+    {% for post in posts %}
+        <article class="post">
+            <div class="muted">{{ post['created_at'] }} · {{ post['like_count'] }} like{% if post['like_count'] != 1 %}s{% endif %}</div>
+            <p>{{ post['content'] }}</p>
+        </article>
+    {% else %}
+        <p>This user has not posted yet.</p>
+    {% endfor %}
+{% endblock %}
