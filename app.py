@@ -98,9 +98,10 @@ def login_required(view):
 
 
 def load_posts(user_id=None):
+    """Load posts for the feed or one profile using the same display shape."""
     db = get_db()
     query = (
-        "SELECT p.id, p.user_id, p.title, p.body, p.created_at, "
+        "SELECT p.id, p.user_id, p.title, p.body, p.body AS content, p.created_at, "
         "u.email, u.email AS username, COUNT(DISTINCT l.id) AS like_count "
         "FROM posts AS p JOIN users AS u ON u.id = p.user_id "
         "LEFT JOIN likes AS l ON l.post_id = p.id "
@@ -134,7 +135,9 @@ def load_comments(posts):
 
 def render_feed():
     user = current_user()
-    posts = load_posts()
+    # A feed is global by definition; passing None avoids accidentally applying
+    # the profile-only user filter while retaining the shared post shape.
+    posts = load_posts(user_id=None)
     liked_post_ids = set()
     if user is not None:
         liked_post_ids = {
@@ -227,6 +230,8 @@ def create_post():
     )
     db.commit()
     flash("Your post is live.")
+    # Redirect to the global feed so the newly committed post is re-queried
+    # immediately and appears with every other user's posts.
     return redirect(url_for("feed"))
 
 
