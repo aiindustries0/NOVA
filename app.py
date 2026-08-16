@@ -48,56 +48,10 @@ def init_db():
         );
 
         CREATE TABLE IF NOT EXISTS posts (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            id INTEGER PRIMARY` KEY AUTOINCREMENT,
             user_id INTEGER NOT NULL,
             content TEXT NOT NULL,
             created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (user_id) REFERENCES users (id)
         );
-
-        CREATE TABLE IF NOT EXISTS likes (
-            user_id INTEGER NOT NULL,
-            post_id INTEGER NOT NULL,
-            PRIMARY KEY (user_id, post_id),
-            FOREIGN KEY (user_id) REFERENCES users (id),
-            FOREIGN KEY (post_id) REFERENCES posts (id)
-        );
-
-        CREATE TABLE IF NOT EXISTS comments (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            user_id INTEGER NOT NULL,
-            post_id INTEGER NOT NULL,
-            content TEXT NOT nULL,
-            created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-            FOREIGN KEY (user_id) REFERENCES users (id),
-            FOREIGN KEY (post_id) REFERENCES posts (id)
-        );
-        """
-    )
-    database.commit()
-
-
-with app.app_context():
-    init_db()
-
-
-def login_required(view):
-    """Send visitors to login before they use a member-only page."""
-    @wraps(view)
-    def wrapped_view(**kwargs):
-        if "user_id" not in session:
-            flash("Please log in first.")
-            return redirect(url_for("login"))
-        return view(**kwargs)
-
-    return wrapped_view
-
-
-@app.context_processor
-def add_logged_in_user():
-    """Make the logged-in user's name available to every template."""
-    user = None
-    if "user_id" in session:
-        user = get_db().execute(
-            "SELECT id, username FROM users WHERE id = ?", (session["user_id"],|
 
