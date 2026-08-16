@@ -1,13 +1,30 @@
 {% extends 'base.html' %}
-{% block title %}Register - NOVA{% endblock %}
+{% block title %}Register — NOVA{% endblock %}
 {% block content %}
-    <h1>Create your NOVA account</h1>
-    <form method="post">
-        <label for="username">Username</label>
-        <input id="username" name="username" maxlength="30" required>
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password" required>
-        <button type="submit">Register</button>
-    </form>
-    <p>Already have an account? <a href="{{ url_for('login') }}">Log in</a>.</p>
+    <section class="auth-layout">
+        <div class="auth-intro">
+            <p class="eyebrow"><span class="eyebrow-line"></span> Start your orbit</p>
+            <h1>Bring your <span class="gradient-text">perspective.</span></h1>
+            <p class="hero-copy">Join a thoughtful corner of the internet made for ideas, people, and momentum.</p>
+            <div class="auth-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+        <div class="auth-card glass-card">
+            <div class="auth-card-heading">
+                <span class="auth-symbol" aria-hidden="true">✦</span>
+                <div><p class="section-kicker">Create your identity</p><h2>Create your NOVA account</h2></div>
+            </div>
+            <form method="post" class="auth-form">
+                <div class="field-group">
+                    <label for="username">Username</label>
+                    <input id="username" name="username" maxlength="30" autocomplete="username" required>
+                </div>
+                <div class="field-group">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" autocomplete="new-password" required>
+                </div>
+                <button class="button button-primary button-full" type="submit">Register <span aria-hidden="true">↗</span></button>
+            </form>
+            <p class="auth-switch">Already have an account? <a href="{{ url_for('login') }}">Log in</a>.</p>
+        </div>
+    </section>
 {% endblock %}

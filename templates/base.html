@@ -3,41 +3,51 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#070a16">
     <title>{% block title %}NOVA{% endblock %}</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 20px; background: #f4f7fb; color: #172033; }
-        nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-bottom: 20px; }
-        nav a { color: #2457c5; text-decoration: none; font-weight: bold; }
-        main { background: white; padding: 22px; border-radius: 12px; box-shadow: 0 2px 8px #d8deea; }
-        textarea, input { width: 100%; box-sizing: border-box; padding: 10px; margin: 6px 0 12px; border: 1px solid #ccd3df; border-radius: 6px; }
-        button { background: #2457c5; color: white; border: 0; border-radius: 6px; padding: 9px 14px; cursor: pointer; }
-        .post { border-top: 1px solid #e1e5ec; padding: 18px 0; }
-        .post:first-child { border-top: 0; }
-        .muted { color: #687386; font-size: 0.9em; }
-        .flash { background: #e8f0ff; padding: 10px; border-radius: 6px; margin-bottom: 15px; }
-        .comment { margin: 8px 0 8px 20px; padding-left: 10px; border-left: 3px solid #d7e2ff; }
-        .small-form { display: inline; }
-        .small-form button { padding: 5px 9px; font-size: 0.9em; }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <nav>
-        <div><a href="{{ url_for('index') }}">NOVA</a></div>
-        <div>
-            {% if logged_in_user %}
-                <a href="{{ url_for('profile', username=logged_in_user['username']) }}">{{ logged_in_user['username'] }}</a>
-                · <a href="{{ url_for('logout') }}">Log out</a>
-            {% else %}
-                <a href="{{ url_for('login') }}">Log in</a>
-                · <a href="{{ url_for('register') }}">Register</a>
-            {% endif %}
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a class="brand" href="{{ url_for('index') }}" aria-label="NOVA home">
+                <span class="brand-mark" aria-hidden="true">N</span>
+                <span class="brand-name">NOVA</span>
+            </a>
+            <div class="nav-actions">
+                {% if logged_in_user %}
+                    <a class="nav-link" href="{{ url_for('profile', username=logged_in_user['username']) }}">
+                        <span class="nav-avatar">{{ logged_in_user['username'][0]|upper }}</span>
+                        <span>{{ logged_in_user['username'] }}</span>
+                    </a>
+                    <a class="nav-link nav-link-muted" href="{{ url_for('logout') }}">Log out</a>
+                {% else %}
+                    <a class="nav-link" href="{{ url_for('login') }}">Log in</a>
+                    <a class="nav-cta" href="{{ url_for('register') }}">Join NOVA <span aria-hidden="true">↗</span></a>
+                {% endif %}
+            </div>
         </div>
     </nav>
+
     {% with messages = get_flashed_messages() %}
         {% for message in messages %}
-            <div class="flash">{{ message }}</div>
+            <div class="flash" role="status">{{ message }}</div>
         {% endfor %}
     {% endwith %}
-    <main>{% block content %}{% endblock %}</main>
+
+    <main class="page-shell">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <span class="footer-dot"></span>
+        <span>NOVA — ideas in orbit</span>
+    </footer>
 </body>
 </html>

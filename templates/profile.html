@@ -1,14 +1,31 @@
 {% extends 'base.html' %}
-{% block title %}@{{ user['username'] }} - NOVA{% endblock %}
+{% block title %}@{{ user['username'] }} — NOVA{% endblock %}
 {% block content %}
-    <h1>@{{ user['username'] }}</h1>
-    <p class="muted">{{ posts|length }} post{% if posts|length != 1 %}s{% endif %}</p>
-    {% for post in posts %}
-        <article class="post">
-            <div class="muted">{{ post['created_at'] }} · {{ post['like_count'] }} like{% if post['like_count'] != 1 %}s{% endif %}</div>
-            <p>{{ post['content'] }}</p>
-        </article>
-    {% else %}
-        <p>This user has not posted yet.</p>
-    {% endfor %}
+    <section class="profile-hero glass-card">
+        <div class="profile-avatar">{{ user['username'][0]|upper }}</div>
+        <div class="profile-copy">
+            <p class="eyebrow"><span class="eyebrow-line"></span> NOVA member</p>
+            <h1>@{{ user['username'] }}</h1>
+            <p class="muted">A collection of thoughts shared with the orbit.</p>
+        </div>
+        <div class="profile-stat"><strong>{{ posts|length }}</strong><span>{% if posts|length == 1 %}post{% else %}posts{% endif %}</span></div>
+    </section>
+
+    <section class="profile-feed" aria-labelledby="posts-heading">
+        <div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Personal archive</p><h2 id="posts-heading">Posts by @{{ user['username'] }}</h2></div></div>
+        <div class="feed-list">
+            {% for post in posts %}
+                <article class="post-card glass-card">
+                    <div class="post-header">
+                        <div class="post-identity"><span class="avatar avatar-soft">{{ user['username'][0]|upper }}</span><span><strong>@{{ user['username'] }}</strong><span class="post-time">{{ post['created_at'] }}</span></span></div>
+                        <span class="post-index">{{ '%02d'|format(loop.index) }}</span>
+                    </div>
+                    <p class="post-content">{{ post['content'] }}</p>
+                    <div class="profile-post-meta"><span class="action-icon" aria-hidden="true">♡</span> {{ post['like_count'] }} {% if post['like_count'] != 1 %}likes{% else %}like{% endif %}</div>
+                </article>
+            {% else %}
+                <div class="empty-state glass-card"><div class="empty-icon" aria-hidden="true">✧</div><h3>This orbit is quiet.</h3><p class="muted">This user has not posted yet.</p></div>
+            {% endfor %}
+        </div>
+    </section>
 {% endblock %}

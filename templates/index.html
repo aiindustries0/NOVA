@@ -1,41 +1,104 @@
 {% extends 'base.html' %}
-{% block title %}Feed - NOVA{% endblock %}
+{% block title %}Feed — NOVA{% endblock %}
 {% block content %}
-    <h1>NOVA feed</h1>
-    <p>A small place to share ideas.</p>
+    <section class="hero-section">
+        <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> The community feed</p>
+            <h1>Ideas worth <span class="gradient-text">sharing.</span></h1>
+            <p class="hero-copy">A small place for curious minds to share what they are building, learning, and imagining.</p>
+        </div>
+        <div class="hero-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+    </section>
 
     {% if logged_in_user %}
-        <form method="post" action="{{ url_for('create_post') }}">
-            <label for="content">What are you thinking?</label>
-            <textarea id="content" name="content" rows="3" maxlength="500" required></textarea>
-            <button type="submit">Post</button>
-        </form>
+        <section class="composer glass-card" aria-label="Create a post">
+            <div class="composer-heading">
+                <div class="avatar avatar-accent">{{ logged_in_user['username'][0]|upper }}</div>
+                <div>
+                    <p class="section-kicker">Share with NOVA</p>
+                    <p class="muted">Your next thought could start something.</p>
+                </div>
+            </div>
+            <form method="post" action="{{ url_for('create_post') }}">
+                <label class="sr-only" for="content">What are you thinking?</label>
+                <textarea id="content" name="content" rows="3" maxlength="500" placeholder="What are you thinking?" required></textarea>
+                <div class="composer-footer">
+                    <span class="character-hint">Keep it concise · 500 characters max</span>
+                    <button class="button button-primary" type="submit">Post <span aria-hidden="true">↗</span></button>
+                </div>
+            </form>
+        </section>
     {% else %}
-        <p><a href="{{ url_for('login') }}">Log in</a> to write a post or interact with the feed.</p>
+        <section class="welcome-card glass-card">
+            <div class="welcome-icon" aria-hidden="true">✦</div>
+            <div>
+                <p class="section-kicker">You are invited</p>
+                <h2>Make your voice part of the orbit.</h2>
+                <p class="muted"> <a href="{{ url_for('login') }}">Log in</a> to write a post or interact with the feed.</p>
+            </div>
+        </section>
     {% endif %}
 
-    {% for post in posts %}
-        <article class="post">
-            <strong><a href="{{ url_for('profile', username=post['username']) }}">@{{ post['username'] }}</a></strong>
-            <div class="muted">{{ post['created_at'] }}</div>
-            <p>{{ post['content'] }}</p>
-            {% if logged_in_user %}
-                <form class="small-form" method="post" action="{{ url_for('like', post_id=post['id']) }}">
-                    <button type="submit">{% if post['id'] in liked_post_ids %}Unlike{% else %}Like{% endif %} ({{ post['like_count'] }})</button>
-                </form>
-                <form method="post" action="{{ url_for('comment', post_id=post['id']) }}">
-                    <input name="content" maxlength="300" placeholder="Write a comment" required>
-                    <button type="submit">Comment</button>
-                </form>
-            {% else %}
-                <span class="muted">Likes: {{ post['like_count'] }}</span>
-            {% endif %}
+    <section class="feed-section" aria-labelledby="feed-heading">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow"><span class="eyebrow-line"></span> Latest signals</p>
+                <h2 id="feed-heading">The feed</h2>
+            </div>
+            <span class="feed-count">{{ posts|length }} {% if posts|length == 1 %}post{% else %}posts{% endif %}</span>
+        </div>
 
-            {% for item in comments_by_post[post['id']] %}
-                <div class="comment"><strong>@{{ item['username'] }}</strong>: {{ item['content'] }}<br><span class="muted">{{ item['created_at'] }}</span></div>
+        <div class="feed-list">
+            {% for post in posts %}
+                <article class="post-card glass-card">
+                    <div class="post-header">
+                        <a class="post-identity" href="{{ url_for('profile', username=post['username']) }}">
+                            <span class="avatar avatar-soft">{{ post['username'][0]|upper }}</span>
+                            <span>
+                                <strong>@{{ post['username'] }}</strong>
+                                <span class="post-time">{{ post['created_at'] }}</span>
+                            </span>
+                        </a>
+                        <span class="post-index">{{ '%02d'|format(loop.index) }}</span>
+                    </div>
+                    <p class="post-content">{{ post['content'] }}</p>
+                    <div class="post-actions">
+                        {% if logged_in_user %}
+                            <form class="action-form" method="post" action="{{ url_for('like', post_id=post['id']) }}">
+                                <button class="action-button {% if post['id'] in liked_post_ids %}is-liked{% endif %}" type="submit" aria-label="{% if post['id'] in liked_post_ids %}Unlike{% else %}Like{% endif %} this post">
+                                    <span class="action-icon" aria-hidden="true">♡</span>
+                                    <span>{% if post['id'] in liked_post_ids %}Liked{% else %}Like{% endif %}</span>
+                                    <span class="action-count">{{ post['like_count'] }}</span>
+                                </button>
+                            </form>
+                            <form class="comment-form" method="post" action="{{ url_for('comment', post_id=post['id']) }}">
+                                <label class="sr-only" for="comment-{{ post['id'] }}">Write a comment</label>
+                                <input id="comment-{{ post['id'] }}" name="content" maxlength="300" placeholder="Write a comment" required>
+                                <button class="action-button comment-submit" type="submit"><span class="action-icon" aria-hidden="true">↗</span><span>Comment</span></button>
+                            </form>
+                        {% else %}
+                            <span class="action-button action-static"><span class="action-icon" aria-hidden="true">♡</span><span>Likes</span><span class="action-count">{{ post['like_count'] }}</span></span>
+                            <a class="action-button action-static" href="{{ url_for('login') }}"><span class="action-icon" aria-hidden="true">◌</span><span>Log in to interact</span></a>
+                        {% endif %}
+                    </div>
+                    {% if comments_by_post[post['id']] %}
+                        <div class="comments-list">
+                            {% for item in comments_by_post[post['id']] %}
+                                <div class="comment">
+                                    <span class="comment-avatar">{{ item['username'][0]|upper }}</span>
+                                    <div class="comment-body"><strong>@{{ item['username'] }}</strong><span>{{ item['content'] }}</span><small>{{ item['created_at'] }}</small></div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </article>
+            {% else %}
+                <div class="empty-state glass-card">
+                    <div class="empty-icon" aria-hidden="true">✧</div>
+                    <h3>No posts yet.</h3>
+                    <p class="muted">Be the first to share something with the community.</p>
+                </div>
             {% endfor %}
-        </article>
-    {% else %}
-        <p>No posts yet. Be the first to share something!</p>
-    {% endfor %}
+        </div>
+    </section>
 {% endblock %}
